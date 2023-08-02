@@ -36,7 +36,7 @@ This API offers the following Actions:
 
 ## Pages
 + Home : Displays Full user List from API.
-+ View-User - Displays User Details
++ User-View - Displays User Details
 + c404 - Page Not Found
 
 ## Routes
