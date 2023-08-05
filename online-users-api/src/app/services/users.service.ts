@@ -21,4 +21,12 @@ export class UsersService {
   }
 
   //Method to getUserByID - Observable
+  getByUserId(id: string): Observable<User>{
+    return this.httpClient.get<User>(`${this.baseURL}${id}`);
+  }
+
+  //Delete User
+  delete(id:string) : Promise<any>{
+    return lastValueFrom(this.httpClient.delete<any>(`${this.baseURL}${id}`))
+  }
 }

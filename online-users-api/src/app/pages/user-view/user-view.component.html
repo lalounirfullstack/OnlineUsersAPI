@@ -1,1 +1,32 @@
-<p>user-view works!</p>
+<section class="card mt-3">
+  <div class="bg-white rounded shadow-sm">
+    <div class="row">
+      <figure class="col-12 col-md-4">
+        <img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm user-img" src="{{oneUser?.image}}" alt="{{oneUser?.first_name}}">
+      </figure>
+      <div class="col-12 col-md-8">
+        <p>{{oneUser?.first_name}}</p>
+        <p>{{oneUser?.last_name}}</p>
+        <p>User Name: {{oneUser?.username}}</p>
+        <p>User Name: {{oneUser?.email}}</p>
+        <!--Load buttons for Caracteristicas y Opiniones -->
+        <div>
+          <button class="btn btn-danger m-1"><img class="btn-image" src="assets/Delete.GIF" (click)="deleteUser(oneUser?._id)" >Delete</button>
+        </div>
+        <button class="btn btn-danger m-1" [routerLink]="['/updateuser', oneUser?._id]"><img class="btn-image" src="assets/Update.GIF">Update</button>
+        <button class="btn btn-danger m-1" [routerLink]="['/home']"> <img class="btn-image" src="assets/Home.GIF">Home</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+

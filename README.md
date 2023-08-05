@@ -9,7 +9,7 @@ https://peticiones.online/users
 This API offers the following Actions:
 + Get All Users : https://peticiones.online/api/users
   + Returns Array of Objects with all users data.
-  + Provides Pagination - Not used in the application.
+  + Provides Pagination - Used to render Users in multiple Pages.
 + Get User By ID: https://peticiones.online/api/users/IDUSUARIO
   + Returns users that matches provided ID
   + Error if user cannot be found.
@@ -76,11 +76,12 @@ This API offers the following Actions:
 
 ## Images
 + View Details
-+ Updated
++ Update
 + Delete
++ Home
 
 ## Buttons
 > Page Home:
 > View Details | Update | Delete
 > Page: View User:
-> Delete | Update | Back To List
+> Delete | Update | Back To Home
