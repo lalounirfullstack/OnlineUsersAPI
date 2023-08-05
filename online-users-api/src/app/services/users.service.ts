@@ -11,7 +11,8 @@ export class UsersService {
   httpClient = inject(HttpClient);
 
   //property to store URL
-  private baseURL: string = 'https://peticiones.online/api/users/';
+  private baseURL: string = 'https://peticiones.online/api/users';
+  private baseURL2: string = 'https://peticiones.online/api/users?page=2'
 
   constructor() {}
 
@@ -20,9 +21,13 @@ export class UsersService {
     return this.httpClient.get<any>(this.baseURL);
   }
 
+  getUsersPageTwo(){
+    return this.httpClient.get<any>(this.baseURL2);
+  }
+
   //Method to getUserByID - Observable
   getByUserId(id: string): Observable<User>{
-    return this.httpClient.get<User>(`${this.baseURL}${id}`);
+    return this.httpClient.get<User>(`${this.baseURL}/${id}`);
   }
 
   //Delete User

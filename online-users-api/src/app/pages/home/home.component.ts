@@ -19,4 +19,11 @@ export class HomeComponent {
       this.arrUsers = user.results;
     });
   }
+
+  getUsersPageTwo(){
+    this.usersService.getUsersPageTwo().subscribe((user)=>{
+      this.arrUsers = user.results;
+    })
+  }
+
 }

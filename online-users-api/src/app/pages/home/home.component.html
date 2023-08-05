@@ -4,5 +4,14 @@
       <!--Insert User-Card-->
       <app-user-card [userCard]="user"> </app-user-card>
     </article>
-  </div>
+    <!--Page Navigation to view Users in Multiple Pages-->
+    <div>
+      <ul class="pagination">
+        <li><a href="#"><img class="pagination-image"  src="assets/BackArrow.GIF"></a></li>
+        <li><a (click)="ngOnInit()">1</a></li>
+        <li><a (click)="getUsersPageTwo()">2</a></li>
+        <li><a (click)="getUsersPageTwo()"><img class="pagination-image" src="assets/NextArrow.GIF"></a></li>
+      </ul>
+    </div>
+    </div>
 </section>

@@ -36,7 +36,6 @@ export class UserViewComponent {
   //Delete Selected User
   async deleteUser(id:string) {
       alert('Are you sure you want to delete this User?');
-
       let response = await
         this.usersServices.delete(id);
         if(response){
