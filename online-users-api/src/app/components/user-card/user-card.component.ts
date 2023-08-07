@@ -10,12 +10,26 @@ import {Router} from "@angular/router";
 })
 export class UserCardComponent {
   @Input() userCard : User | any;
+  //@Input() searchTerm: string ='';
+  //filteredUsers: any[] = [];
 
     oneUser !: User | any;
     usersServices: UsersService = inject(UsersService)
 
   //router To redirect to Home when User is deleted
   router = inject(Router);
+
+  // ngOnChanges() {
+  //   this.filteredUsers();
+  // }
+  //
+  // filteredUsers() {
+  //   if(this.searchTerm.trim()===''){
+  //     this.filteredUsers = this.oneUser
+  //   } else {
+  //     this.filteredUsers = this.oneUser
+  //   }
+  // }
 
   //Delete Selected User
   async deleteUser(id:string) {

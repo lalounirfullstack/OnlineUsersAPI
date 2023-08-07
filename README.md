@@ -3,7 +3,7 @@
 Angular Application that interacts with an External API (peticiones.online.users) and makes request to create,
 read, update delete users from the API and displays results in the Angular App. 
 
-## External API
+## External API  ✅
 https://peticiones.online/users
 
 This API offers the following Actions:
@@ -25,7 +25,7 @@ This API offers the following Actions:
   + Returns info of the user that has been deleted.
   + Error if the user does not exist.
 
-## CSS (Bootstrap/Bulma)
+## CSS (Bootstrap/Bulma) ✅
 + Uses Bootstrap and Bulma as frameworks the CSS.
 > Bootstrap:  
 > Styles: "node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -34,23 +34,23 @@ This API offers the following Actions:
 > Bulma: 
 > @import 'bulma/css/bulma.css'
 
-## Pages
+## Pages ✅
 + Home : Displays Full user List from API.
 + User-View - Displays User Details
 + c404 - Page Not Found
 
-## Routes
+## Routes ✅
 + /Home - Load Users List.
 + /user/1 - User View by UserId.
 + /newuser - Form to create a user.
 + /updateuser/1 Form preloaded with user data to allow update on the User.
 
-## Components
+## Components ✅
 + Header - Logo  & Page Navigation
 + User-Form - Create/Update User Form
 + User-Card - User details card.
 
-## Interface
+## Interface ✅
 +  User Data 
   + _id: string
   + id: number
@@ -61,7 +61,7 @@ This API offers the following Actions:
   + image: string
   + password: string
 
-## Services
+## Services ✅
 + Services that support the method to interacts with the data from the API such as:
   + getAll();
   + getByUserId();
@@ -69,7 +69,7 @@ This API offers the following Actions:
   + updateUserById();
   + deleteUserById();
 
-## Form Validations
+## Form Validations ✅
 + All Fields are mandatory
 + Email correct format
 + Password format  & Length

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'online-users-api';
+
+  filterSearch(search: string) {
+    console.log({ search })
+  }
 }

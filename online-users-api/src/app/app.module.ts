@@ -12,7 +12,7 @@ import { C404Component } from './pages/c404/c404.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     UserFormComponent,
     UserCardComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

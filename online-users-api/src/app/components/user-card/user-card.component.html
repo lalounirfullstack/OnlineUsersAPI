@@ -1,17 +1,21 @@
-<div class="card p-3 shadow">
-  <div class="card-body">
+<div class="card mx-auto p-3 shadow" >
+  <div class="d-flex justify-content-center">
     <figure>
       <img class="image" src="{{userCard?.image}}" alt="{{userCard?.first_name}}">
     </figure>
+  </div>
+  <div class="card-body">
     <div>
       <p class="username">
         {{ userCard?.first_name }} {{userCard.last_name}}
       </p>
     </div>
   </div>
-  <div>
+  <div class="text-center">
     <img class="image-action" src="/assets/Magnifier.GIF" alt="details" [routerLink]="['/viewuser', userCard?._id]">View Details
     <img class="image-action" src="/assets/Update.GIF" alt="update" [routerLink]="['/updateuser', userCard?._id]">Update
     <img class="image-action" src="/assets/Delete.GIF" alt="delete" (click)="deleteUser(oneUser?._id)" >Delete
   </div>
 </div>
+
+
