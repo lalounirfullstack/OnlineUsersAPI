@@ -10,6 +10,14 @@
   border: 1px solid black
 }
 
+a{
+  text-decoration: none;
+}
+
+a:link, a:visited{
+  color: black;
+}
+
 .username{
   text-align: center;
   font-weight: bold;
@@ -17,8 +25,9 @@
 }
 
 .image-action{
-  width: 20px;
+  width: 30px;
   mix-blend-mode: multiply;
+  padding: 5px;
 }
 
 

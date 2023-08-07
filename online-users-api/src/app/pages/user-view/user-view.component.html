@@ -1,24 +1,36 @@
-<section class="card mt-3">
-  <div class="bg-white rounded shadow-sm">
-    <div class="row">
-      <figure class="col-12 col-md-4">
-        <img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm user-img" src="{{oneUser?.image}}" alt="{{oneUser?.first_name}}">
+<section class="d-flex justify-content-center mt-4">
+  <div class="bg-grey rounded shadow-sm card-small">
+    <div class="d-flex justify-content-center align-items-center row card-background">
+      <figure class="col-12 col-md-4 text-center">
+        <img class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm user-img mr-md-3" src="{{oneUser?.image}}" alt="{{oneUser?.first_name}}">
       </figure>
+
       <div class="col-12 col-md-8">
-        <p>First Name:{{oneUser?.first_name}}</p>
-        <p>Last Name: {{oneUser?.last_name}}</p>
-        <p>User Name: {{oneUser?.username}}</p>
-        <p>Email: {{oneUser?.email}}</p>
-        <!--Buttons to execute Actions -->
-        <div>
-          <button class="btn btn-danger m-1"><img class="btn-image" src="assets/Delete.GIF" alt="delete" (click)="deleteUser(oneUser?._id)" >Delete</button>
+        <div class="d-flex flex-column p-2 m-2">
+          <p><span>First Name:</span> {{oneUser?.first_name}}</p>
+          <p><span>Last Name:</span> {{oneUser?.last_name}}</p>
+          <p><span>User Name:</span> {{oneUser?.username}}</p>
+          <p><span>Email:</span> {{oneUser?.email}}</p>
         </div>
-        <button class="btn btn-danger m-1" [routerLink]="['/updateuser', oneUser?._id]"><img class="btn-image" src="assets/Update.GIF" alt="update">Update</button>
-        <button class="btn btn-danger m-1" [routerLink]="['/home']"> <img class="btn-image" src="assets/Home.GIF" alt="home">Home</button>
+        <!--Buttons to execute Actions -->
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary m-1" [routerLink]="['/home']"><img class="btn-image" src="assets/Home.GIF" alt="home">Home</button>
+          <button class="btn btn-success m-1" [routerLink]="['/updateuser', oneUser?._id]"><img class="btn-image" src="assets/Update.GIF" alt="update">Update</button>
+          <button class="btn btn-danger m-1"><img class="btn-image" src="assets/Delete.GIF" alt="delete" (click)="deleteUser(oneUser?._id)">Delete</button>
+        </div>
+        <div class="d-flex justify-content-center mt-2">
+          <img class="social-image" src="assets/Facebook.gif" alt="facebook">
+          <img class="social-image" src="assets/LinkedIn.gif" alt="LinkedIn">
+          <img class="social-image" src="assets/Instagram.gif" alt="Instagram">
+          <img class="social-image" src="assets/Twitter.gif" alt="Twitter">
+          <img class="social-image" src="assets/SnapChat.gif" alt="SnapChat">
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+
 
 
 

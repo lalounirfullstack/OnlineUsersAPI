@@ -53,12 +53,27 @@ export class UserFormComponent {
 
         this.userForm = new FormGroup({
           id: new FormControl(response.id,[]),
-          first_name: new FormControl(response.first_name,[]),
-          last_name: new FormControl(response.last_name,[]),
-          username: new FormControl(response.username, []),
-          password: new FormControl('', []),
-          email: new FormControl(response.email,[]),
-          image: new FormControl(response.image, []),
+          first_name: new FormControl(response.first_name,[
+            Validators.required
+          ]),
+          last_name: new FormControl(response.last_name,[
+            Validators.required
+          ]),
+          username: new FormControl(response.username, [
+            Validators.required
+          ]),
+          password: new FormControl(response.password, [
+            Validators.required,
+            //At least 1: Upper Case, Lower Case, Digit, Special Character & Minimum 8 Character Length
+            Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)
+          ]),
+          email: new FormControl(response.email,[
+            Validators.required,
+            Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+          ]),
+          image: new FormControl(response.image, [
+            Validators.required
+          ]),
       },[]);
 
       }

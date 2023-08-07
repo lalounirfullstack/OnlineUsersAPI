@@ -27,7 +27,8 @@
     <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
 
     <!--Send Form-->
-    <input type="submit" value="Enviar" class="btn btn-danger" [disabled]="!userForm.valid">
+    <input type="submit" value="Enviar" class="btn btn-primary m-3" [disabled]="!userForm.valid">
+    <button class="btn btn-danger" [routerLink]="['/home']">Cancel</button>
   </form>
 </section>
 

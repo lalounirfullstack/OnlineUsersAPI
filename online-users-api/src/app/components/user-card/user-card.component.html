@@ -11,11 +11,21 @@
       </p>
     </div>
   </div>
-  <div class="text-center">
-    <img class="image-action" src="/assets/Magnifier.GIF" alt="details" [routerLink]="['/viewuser', userCard?._id]">View Details
-    <img class="image-action" src="/assets/Update.GIF" alt="update" [routerLink]="['/updateuser', userCard?._id]">Update
-    <img class="image-action" src="/assets/Delete.GIF" alt="delete" (click)="deleteUser(oneUser?._id)" >Delete
-  </div>
+ <div class="text-center">
+  <a [routerLink]="['/viewuser', userCard?._id]">
+    <img class="image-action" src="/assets/Magnifier.GIF" alt="details">
+    View Details
+  </a>
+  <a [routerLink]="['/updateuser', userCard?._id]">
+    <img class="image-action" src="/assets/Update.GIF" alt="update">
+    Update
+  </a>
+  <a (click)="deleteUser(oneUser?._id)">
+    <img class="image-action" src="/assets/Delete.GIF" alt="delete">
+    Delete
+  </a>
 </div>
+</div>
+
 
 

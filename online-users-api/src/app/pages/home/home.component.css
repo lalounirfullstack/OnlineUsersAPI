@@ -5,13 +5,27 @@
 
 li{
   margin: 2px;
+  padding: 3px;
 }
 
 a{
   text-decoration: none;
+  padding: 5px;
 }
 
-.number{
+/*.number{*/
+/*  border: 1px solid black;*/
+/*  border-radius: 50%;*/
+/*}*/
+
+.number {
   border: 1px solid black;
-  /*border-radius: 5px;*/
+  border-radius: 50%;
+  width: 30px; /* Adjust the width as needed */
+  height: 30px; /* Adjust the height as needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
 }

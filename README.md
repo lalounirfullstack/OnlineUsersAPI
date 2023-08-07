@@ -25,14 +25,11 @@ This API offers the following Actions:
   + Returns info of the user that has been deleted.
   + Error if the user does not exist.
 
-## CSS (Bootstrap/Bulma) ✅
+## CSS (Bootstrap) ✅
 + Uses Bootstrap and Bulma as frameworks the CSS.
 > Bootstrap:  
 > Styles: "node_modules/bootstrap/dist/css/bootstrap.min.css"
 > JS: "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
-
-> Bulma: 
-> @import 'bulma/css/bulma.css'
 
 ## Pages ✅
 + Home : Displays Full user List from API.
@@ -62,26 +59,37 @@ This API offers the following Actions:
   + password: string
 
 ## Services ✅
-+ Services that support the method to interacts with the data from the API such as:
++ User Services that support the method to interacts with the data from the API such as:
   + getAll();
   + getByUserId();
   + insertUser();
   + updateUserById();
   + deleteUserById();
+  + getByIdPromise();
++ User Filter: used to filtered Users when Search is used.
+  +setSearchTerm()
 
 ## Form Validations ✅
 + All Fields are mandatory
 + Email correct format
-+ Password format  & Length
++ Password correct format & Length
 
-## Images
+## Images ✅
 + View Details
 + Update
 + Delete
 + Home
++ Social Images (not functionally linked)
+  + Facebook
+  + LinkedIn
+  + Instagram
+  + Twitter
+  + SnapChat
 
-## Buttons
+## Buttons ✅
 > Page Home:
 > View Details | Update | Delete
 > Page: View User:
 > Delete | Update | Back To Home
+> Form:
+> Send | Cancel

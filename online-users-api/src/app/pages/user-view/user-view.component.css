@@ -1,6 +1,16 @@
+.card-medium {
+  max-width: 400px;
+}
+
+.card-background{
+  background-color: lightgray;
+  border: 2px black solid;
+  border-radius:10px;
+}
+
 .user-img{
-  margin: 40px;
-  width:300px;
+  margin: 20px;
+  width:250px;
 }
 
 .btn-image{
@@ -9,4 +19,12 @@
   padding: 5px;
 }
 
+span{
+  font-weight: bold;
+}
 
+.social-image{
+  width: 30px;
+  mix-blend-mode: multiply;
+  padding: 5px;
+}
