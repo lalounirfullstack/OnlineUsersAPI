@@ -46,5 +46,17 @@
   "engines": {
     "node": "18.x",
     "npm": "9.5.1"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lalounirfullstack/OnlineUsersAPI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lalounirfullstack/OnlineUsersAPI/issues"
+  },
+  "homepage": "https://github.com/lalounirfullstack/OnlineUsersAPI#readme"
 }
