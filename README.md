@@ -25,11 +25,13 @@ This API offers the following Actions:
   + Returns info of the user that has been deleted.
   + Error if the user does not exist.
 
-## CSS (Bootstrap) ✅
+## CSS (Bootstrap/Bulma) ✅
 + Uses Bootstrap and Bulma as frameworks the CSS.
 > Bootstrap:  
 > Styles: "node_modules/bootstrap/dist/css/bootstrap.min.css"
 > JS: "node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+> Bulma
+> Styles: "node_modules/bulma/css/bulma.css"
 
 ## Pages ✅
 + Home : Displays Full user List from API.
