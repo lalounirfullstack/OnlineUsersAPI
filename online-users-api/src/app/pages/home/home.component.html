@@ -4,14 +4,13 @@
       <!--Insert User-Card-->
       <app-user-card [userCard]="user"> </app-user-card>
     </article>
-    <!--Page Navigation to view Users in Multiple Pages-->
-    <div>
-      <ul class="d-flex justify-content-center align-items-center pagination">
-        <li><a href="#"><img class="pagination-image"  src="assets/BackArrow.GIF" alt="first"></a></li>
-        <li><a class="number"(click)="getUsersPage(1)">1</a></li>
-        <li><a class="number" (click)="getUsersPage(2)">2</a></li>
-        <li><a (click)="getUsersPage(2)"><img class="pagination-image" src="assets/NextArrow.GIF" alt="last"></a></li>
-      </ul>
+  <!--Pagination -->
+    <div class="d-flex justify-content-center align-items-center">
+      <a (click)="getUsersPage(1)" class="number"><<</a>
+      <a (click)="getUsersPage(1)" class="number">1</a>
+      <a (click)="getUsersPage(2)" class="number">2</a>
+      <a (click)="getUsersPage(2)" class="number">>></a>
     </div>
   </div>
 </section>
+
