@@ -2,6 +2,7 @@ import {Component, inject} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {User} from "../../interfaces/user.interface";
 import {UsersService} from "../../services/users.service";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-user-view',
@@ -33,17 +34,30 @@ export class UserViewComponent {
     });
   }
 
-  //Delete Selected User
-  async deleteUser(id:string) {
-      confirm('Are you sure you want to delete this User?');
-      let response = await
-        this.usersServices.delete(id);
-        if(response){
-          alert('User Deleted');
+  deleteUser(userId:string){
+    Swal.fire({
+      title: 'Are you sure want to delete this User?',
+      /*text: 'You will not be able to recover this file!',*/
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes!',
+      cancelButtonText: 'No!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'User has been deleted.',
+          'success'
+        ).then(()=>{
           this.router.navigate(['/home'])
-        }
-
+        })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'User not deleted :)',
+          'error'
+        )
+      }
+    })
   }
-
-
 }

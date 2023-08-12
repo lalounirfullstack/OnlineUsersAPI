@@ -33,6 +33,10 @@ This API offers the following Actions:
 > Bulma
 > Styles: "node_modules/bulma/css/bulma.css"
 
+## Library
++ SweetAlert2
+  +   Used to  display Alerts when user is deleted.
+
 ## Pages ✅
 + Home : Displays Full user List from API.
 + User-View - Displays User Details

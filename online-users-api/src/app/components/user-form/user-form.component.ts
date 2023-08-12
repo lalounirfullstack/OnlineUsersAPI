@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {UsersService} from "../../services/users.service";
 import {ActivatedRoute, Router} from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-user-form',
@@ -19,10 +20,10 @@ export class UserFormComponent {
 
   constructor() {
     this.userForm = new FormGroup({
-      first_name: new FormControl('',[
+      first_name: new FormControl('', [
         Validators.required
       ]),
-      last_name: new FormControl('',[
+      last_name: new FormControl('', [
         Validators.required
       ]),
       username: new FormControl('', [
@@ -33,16 +34,31 @@ export class UserFormComponent {
         //At least 1: Upper Case, Lower Case, Digit, Special Character & Minimum 8 Character Length
         Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/)
       ]),
-      email: new FormControl('',[
+      email: new FormControl('', [
         Validators.required,
-        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+        Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,6}$/)
       ]),
       image: new FormControl('', [
         Validators.required,
         //Validators.pattern(/^(https?|ftp)://([^\s/$.?#].[^\s]*)$/)
       ])
-    },[]);
+    }, []);
   }
+
+  /*Sweet Alert*/
+  insertedUserMessage(){
+    Swal.fire(
+      ' ! Congrats !',
+       'User Inserted Successfully',
+      'success');
+  }
+
+ updatedUserMessage(){
+    Swal.fire(
+      '! Congrats !',
+      'Use updated successfully',
+      'success');
+ }
 
   //Update User
   ngOnInit(){
@@ -69,7 +85,7 @@ export class UserFormComponent {
           ]),
           email: new FormControl(response.email,[
             Validators.required,
-            Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/)
+            Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,6}$/)
           ]),
           image: new FormControl(response.image, [
             Validators.required
@@ -89,7 +105,8 @@ export class UserFormComponent {
       let response = await this.usersService.update(this.userForm.value)
       console.log(response);
       if(response){
-          alert('User Updated');
+        this.updatedUserMessage();
+        //alert('User Updated');
           //Redirect to Home
         this.router.navigate(['/home']);
         } else{
@@ -102,7 +119,8 @@ export class UserFormComponent {
       //Response is an Object
       //If it has id it has inserted correctly
       if (response.id) {
-        alert('User Inserted');
+        this.insertedUserMessage();
+        //alert('User Inserted');
         this.userForm.reset();
         } else {
           alert('Error User not inserted try again !');

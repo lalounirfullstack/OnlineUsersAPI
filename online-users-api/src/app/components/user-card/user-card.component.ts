@@ -1,7 +1,7 @@
 import {Component, inject, Input} from '@angular/core';
 import { User } from 'src/app/interfaces/user.interface';
 import {UsersService} from "../../services/users.service";
-import {Router} from "@angular/router";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-user-card',
@@ -14,20 +14,32 @@ export class UserCardComponent {
   oneUser !: User | any;
   usersServices: UsersService = inject(UsersService)
 
-  //router To redirect to Home when User is deleted
-  router = inject(Router);
-
-
-  //Delete Selected User
-  async deleteUser(id:string) {
-      confirm('Are you sure you want to delete this User?');
-      let response = await
-        this.usersServices.delete(id);
-        if(response){
-          alert('User Deleted');
-          this.router.navigate(['/home'])
-        }
-
+    //Delete User using SweetAlert2
+    deleteUser(userId:string){
+    Swal.fire({
+      title: 'Are you sure want to delete this User?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Yes!',
+      cancelButtonText: 'No!'
+    }).then((result) => {
+      if (result.value) {
+        Swal.fire(
+          'Deleted!',
+          'User has been deleted.',
+          'success'
+        ).then(()=>{
+          //Refreshes page to simulate deletion.
+          window.location.reload();
+        })
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'User not deleted :)',
+          'warning'
+        )
+      }
+    })
   }
 
 

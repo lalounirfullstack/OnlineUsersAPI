@@ -8,7 +8,6 @@ import { UsersfilterService } from 'src/app/services/usersfilter.service';
 })
 export class HeaderComponent {
   searchTerm: string ='';
-  // @Output() searchEvent = new EventEmitter<string>();
 
   constructor(private usersFilterService: UsersfilterService) {}
 

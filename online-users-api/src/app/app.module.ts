@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {SweetAlert2Module} from "@sweetalert2/ngx-sweetalert2";
 
 //Components
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     UserFormComponent,
     UserCardComponent,
   ],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule, SweetAlert2Module.forRoot()],
   providers: [],
   bootstrap: [AppComponent],
 })
