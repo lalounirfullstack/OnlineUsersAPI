@@ -35,7 +35,7 @@ This API offers the following Actions:
 
 ## Library
 + SweetAlert2
-  +   Used to  display Alerts when user is deleted.
+  +   Used to  display Alerts when user is deleted/updated.
 
 ## Pages ✅
 + Home : Displays Full user List from API.
@@ -54,7 +54,7 @@ This API offers the following Actions:
 + User-Card - User details card.
 
 ## Interface ✅
-+  User Data 
++  User Data from API is controlled by the Interface:
   + _id: string
   + id: number
   + first_name: string
