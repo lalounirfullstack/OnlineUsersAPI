@@ -44,7 +44,7 @@ export class HomeComponent {
       return;
     }
 
-    //Normalizes String Special Characters Like accents. To avois issues filtering users
+    //Normalizes String Special Characters Like accents. To avoid issues filtering users
     const terms = this.term.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').split(' ')
 
     this.arrUsersFiltered = this.arrUsers.filter(user => {

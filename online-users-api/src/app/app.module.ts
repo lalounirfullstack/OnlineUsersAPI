@@ -14,6 +14,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserCardComponent } from './components/user-card/user-card.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     HeaderComponent,
     UserFormComponent,
     UserCardComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule, SweetAlert2Module.forRoot()],
   providers: [],

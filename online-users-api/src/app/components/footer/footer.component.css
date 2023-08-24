@@ -1,0 +1,19 @@
+.footer-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.btn-text{
+  margin-left: 10px;
+  color: white;
+}
+
+.custom-input{
+  height: 40px;
+}
