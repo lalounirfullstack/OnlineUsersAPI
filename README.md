@@ -33,7 +33,7 @@ This API offers the following Actions:
 > Bulma
 > Styles: "node_modules/bulma/css/bulma.css"
 
-## Library
+## Library ✅
 + SweetAlert2
   +   Used to  display Alerts when user is deleted/updated.
 
@@ -52,6 +52,7 @@ This API offers the following Actions:
 + Header - Logo  & Page Navigation
 + User-Form - Create/Update User Form
 + User-Card - User details card.
++ Footer - Subscribe to News Letter
 
 ## Interface ✅
 +  User Data from API is controlled by the Interface:
@@ -93,9 +94,11 @@ This API offers the following Actions:
   + SnapChat
 
 ## Buttons ✅
-> Page Home:
-> View Details | Update | Delete
-> Page: View User:
-> Delete | Update | Back To Home
-> Form:
-> Send | Cancel
++ Page Home:
+  + View Details | Update | Delete
++ Page: View User:
+  + Delete | Update | Back To Home
++ Form:
+  + Send | Cancel
++ Subscribe to Newsletter
+  + Send 
