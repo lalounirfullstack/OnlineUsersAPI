@@ -14,7 +14,7 @@
         </div>
         <!--Buttons to execute Actions -->
         <div class="d-flex justify-content-center">
-          <button class="btn btn-primary m-1" [routerLink]="['/home']"><img class="btn-image" src="assets/Home.GIF" alt="home">Home</button>
+          <button class="btn btn-primary m-1" [routerLink]="['/home']"><img class="btn-image" src="assets/Home.GIF" alt="home">Back to List</button>
           <button class="btn btn-success m-1" [routerLink]="['/updateuser', oneUser?._id]"><img class="btn-image" src="assets/Update.GIF" alt="update">Update</button>
           <button class="btn btn-danger m-1"><img class="btn-image" src="assets/Delete.GIF" alt="delete" (click)="deleteUser(oneUser?._id)">Delete</button>
         </div>
