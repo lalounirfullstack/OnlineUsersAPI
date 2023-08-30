@@ -56,7 +56,7 @@ export class UserFormComponent {
  updatedUserMessage(){
     Swal.fire(
       '! Congrats !',
-      'Use updated successfully',
+      'User updated successfully',
       'success');
  }
 
@@ -110,7 +110,7 @@ export class UserFormComponent {
           //Redirect to Home
         this.router.navigate(['/home']);
         } else{
-          alert('Error User not updated');
+          alert('Error ! User not updated');
         }
     } else{
       //To send to Service Inject Service
@@ -123,7 +123,7 @@ export class UserFormComponent {
         //alert('User Inserted');
         this.userForm.reset();
         } else {
-          alert('Error User not inserted try again !');
+          alert('Error ! User not inserted try again !');
         }
       }
       //Resets Form
