@@ -1,28 +1,33 @@
 <section class="container mt-3">
-  <form [formGroup]="userForm" (ngSubmit)="getDataForm()">
-    <label for="first_name">Nombre Usuario</label>
+  <!--Dynamically Displays text if it is a new User or and update of a user-->
+  <div>
+    <h2 class="mt-5 pt-4 fw-bold fst-italic">{{!userForm.value.id?'NUEVO USUARIO' : 'ACTUALIZAR USUARIO'}}</h2>
+  </div>
+
+  <form class="form" [formGroup]="userForm" (ngSubmit)="getDataForm()">
+    <label class="label" for="first_name">Nombre Usuario</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca nombre de usuario" formControlName="first_name" id="first_name">
     <p class="error" *ngIf="formValidator('first_name','required')">Campo Requerido</p>
 
-    <label for="last_name">Apellido Usuario</label>
+    <label class="label" for="last_name">Apellido Usuario</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca apellido de usuario" formControlName="last_name" id="last_name">
     <p class="error" *ngIf="formValidator('last_name','required')">Campo Requerido</p>
 
-    <label for="username">Nombre Usuario</label>
+    <label class="label" for="username">Nombre Usuario</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca Nombre de Usuario" formControlName="username" id="username">
     <p class="error" *ngIf="formValidator('username','required')">Campo Requerido</p>
 
-    <label for="password">Password</label>
+    <label class="label" for="password">Password</label>
     <input type="password" class="form-control input is-rounded is-info" placeholder="Introduza password de usuario" formControlName="password" id="password">
     <p class="error" *ngIf="formValidator('password','required')">Campo Requerido</p>
     <p class="error" *ngIf="formValidator('password','pattern')">Por lo menos: 1-Mayuscula, 1-Miniscula, 1-Digito, 1-Character Special y 8 Caracteres</p>
 
-    <label for="email">Email</label>
+    <label class="label" for="email">Email</label>
     <input type="email" class="form-control input is-rounded is-info" placeholder="Introduzca Email del Usuario" formControlName="email" id="email">
     <p class="error" *ngIf="formValidator('email','required')">Campo Requerido</p>
     <p class="error" *ngIf="formValidator('email','pattern')">Formato de Email Invalido</p>
 
-    <label for="image">Imagen Usuario</label>
+    <label class="label" for="image">Imagen Usuario</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca URL de foto usuario" formControlName="image" id="image">
     <p class="error" *ngIf="formValidator('image','required')">Campo Requerido</p>
     <p class="error" *ngIf="formValidator('image','pattern')">Formato de URL requerido para la Imagen</p>
