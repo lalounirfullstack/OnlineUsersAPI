@@ -36,25 +36,25 @@ export class UserViewComponent {
 
   deleteUser(userId:string){
     Swal.fire({
-      title: 'Are you sure want to delete this User?',
+      title: 'Desear borrar el usuario?',
       /*text: 'You will not be able to recover this file!',*/
       icon: 'warning',
       showCancelButton: true,
-      confirmButtonText: 'Yes!',
-      cancelButtonText: 'No!'
+      confirmButtonText: 'Aceptar',
+      cancelButtonText: 'Cancelar'
     }).then((result) => {
       if (result.value) {
         Swal.fire(
-          'Deleted!',
-          'User has been deleted.',
+          'Usuario borrado',
+          'Usuario ha sido borrado ! :)',
           'success'
         ).then(()=>{
           this.router.navigate(['/home'])
         })
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
-          'Cancelled',
-          'User not deleted :)',
+          'Cancelado',
+          'User no borrado :(',
           'error'
         )
       }

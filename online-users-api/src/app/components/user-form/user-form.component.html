@@ -1,35 +1,35 @@
 <section class="container mt-3">
   <form [formGroup]="userForm" (ngSubmit)="getDataForm()">
-    <label for="first_name">First Name</label>
-    <input type="text" class="form-control input is-rounded is-info" placeholder="Enter your First Name" formControlName="first_name" id="first_name">
-    <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
+    <label for="first_name">Nombre Usuario</label>
+    <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca nombre de usuario" formControlName="first_name" id="first_name">
+    <p class="error" *ngIf="formValidator('first_name','required')">Campo Requerido</p>
 
-    <label for="last_name">Last Name</label>
-    <input type="text" class="form-control input is-rounded is-info" placeholder="Enter Your Last Name" formControlName="last_name" id="last_name">
-    <p class="error" *ngIf="formValidator('last_name','required')">Required Field</p>
+    <label for="last_name">Apellido Usuario</label>
+    <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca apellido de usuario" formControlName="last_name" id="last_name">
+    <p class="error" *ngIf="formValidator('last_name','required')">Campo Requerido</p>
 
-    <label for="username">User Name</label>
-    <input type="text" class="form-control input is-rounded is-info" placeholder="Enter Your User Name" formControlName="username" id="username">
-    <p class="error" *ngIf="formValidator('username','required')">Required Field</p>
+    <label for="username">Nombre Usuario</label>
+    <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca Nombre de Usuario" formControlName="username" id="username">
+    <p class="error" *ngIf="formValidator('username','required')">Campo Requerido</p>
 
     <label for="password">Password</label>
-    <input type="password" class="form-control input is-rounded is-info" placeholder="Enter Your Password" formControlName="password" id="password">
-    <p class="error" *ngIf="formValidator('password','required')">Required Field</p>
-    <p class="error" *ngIf="formValidator('password','pattern')">At least: 1-Upper Case, 1-Lower Case, 1-Digit, 1-Special Character & a minimum 8 Character Length</p>
+    <input type="password" class="form-control input is-rounded is-info" placeholder="Introduza password de usuario" formControlName="password" id="password">
+    <p class="error" *ngIf="formValidator('password','required')">Campo Requerido</p>
+    <p class="error" *ngIf="formValidator('password','pattern')">Por lo menos: 1-Mayuscula, 1-Miniscula, 1-Digito, 1-Character Special y 8 Caracteres</p>
 
     <label for="email">Email</label>
-    <input type="email" class="form-control input is-rounded is-info" placeholder="Enter Your Email" formControlName="email" id="email">
-    <p class="error" *ngIf="formValidator('email','required')">Required Field</p>
-    <p class="error" *ngIf="formValidator('email','pattern')">Invalid Email Format</p>
+    <input type="email" class="form-control input is-rounded is-info" placeholder="Introduzca Email del Usuario" formControlName="email" id="email">
+    <p class="error" *ngIf="formValidator('email','required')">Campo Requerido</p>
+    <p class="error" *ngIf="formValidator('email','pattern')">Formato de Email Invalido</p>
 
-    <label for="image">Photo Image URL</label>
-    <input type="text" class="form-control input is-rounded is-info" placeholder="Enter Your Photo URL" formControlName="image" id="image">
-    <p class="error" *ngIf="formValidator('image','required')">Required Field</p>
-    <p class="error" *ngIf="formValidator('image','pattern')">Valid URL for Image required</p>
+    <label for="image">Imagen Usuario</label>
+    <input type="text" class="form-control input is-rounded is-info" placeholder="Introduzca URL de foto usuario" formControlName="image" id="image">
+    <p class="error" *ngIf="formValidator('image','required')">Campo Requerido</p>
+    <p class="error" *ngIf="formValidator('image','pattern')">Formato de URL requerido para la Imagen</p>
 
     <!--Send Form-->
-    <input type="submit" value="Enviar" class="btn btn-primary m-3" [disabled]="!userForm.valid">
-    <button class="btn btn-danger" [routerLink]="['/home']">Cancel</button>
+    <input type="submit" value="Guardar" class="btn btn-primary m-3" [disabled]="!userForm.valid">
+    <button class="btn btn-danger" [routerLink]="['/home']">Cancelar</button>
   </form>
 </section>
 

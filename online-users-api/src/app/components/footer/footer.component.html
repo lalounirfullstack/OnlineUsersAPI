@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="d-flex justify-content-center align-items-center footer-content">
     <form #emailForm="ngForm" (ngSubmit)="getDataTemplate(emailForm)">
-    <input class="custom-input" type="text" id="email" name="email" placeholder="Subscribe to Newsletter" ngModel required email>
-    <button type="submit" [disabled]="!emailForm.valid" class="button is-primary btn-text" >Submit</button>
+    <input class="custom-input" type="text" id="email" name="email" placeholder="Subscribete a Newsletter" ngModel required email>
+    <button type="submit" [disabled]="!emailForm.valid" class="button is-primary btn-text">Enviar</button>
     </form>
     <div *ngIf="displayMessage" class="alert alert-dark">{{ message }}</div>
   </div>

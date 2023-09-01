@@ -9,12 +9,12 @@
           <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/newuser']" routerLinkActive="active">New User</a>
+          <a class="nav-link" [routerLink]="['/newuser']" routerLinkActive="active">Nuevo Usuario</a>
         </li>
       </ul>
       <form class="d-flex">
         <!--Dynamic Search-->
-        <input class="form-control me-2" type="text" placeholder="Search" name="searchterm" [(ngModel)]="searchTerm" (input)="onSearch($event)">
+        <input class="form-control me-2" type="text" placeholder="Buscar Usuario" name="searchterm" [(ngModel)]="searchTerm" (input)="onSearch($event)">
       </form>
     </div>
   </div>

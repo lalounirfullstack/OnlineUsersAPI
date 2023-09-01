@@ -49,14 +49,14 @@ export class UserFormComponent {
   insertedUserMessage(){
     Swal.fire(
       ' ! Congrats !',
-       'User Inserted Successfully',
+       'Usuario Insertado',
       'success');
   }
 
  updatedUserMessage(){
     Swal.fire(
       '! Congrats !',
-      'User updated successfully',
+      'Ussuario Actualizado',
       'success');
  }
 
@@ -111,7 +111,7 @@ export class UserFormComponent {
           //Redirect to Home
         this.router.navigate(['/home']);
         } else{
-          alert('Error ! User not updated');
+          alert('Error ! Usuario No Actualizado');
         }
     } else{
       //To send to Service Inject Service
@@ -124,7 +124,7 @@ export class UserFormComponent {
         //alert('User Inserted');
         this.userForm.reset();
         } else {
-          alert('Error ! User not inserted try again !');
+          alert('Error ! Usuario no Insertado trata de nuevo !');
         }
       }
       //Resets Form

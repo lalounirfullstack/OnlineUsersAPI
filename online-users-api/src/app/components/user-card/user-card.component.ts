@@ -17,16 +17,16 @@ export class UserCardComponent {
     //Delete User using SweetAlert2
     deleteUser(userId:string){
     Swal.fire({
-      title: 'Are you sure want to delete this User?',
+      title: 'Deseas Borrar al Usuario?',
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: 'Yes!',
-      cancelButtonText: 'No!'
+      cancelButtonText: 'Cancelar',
+      confirmButtonText: 'Aceptar'
     }).then((result) => {
       if (result.value) {
         Swal.fire(
-          'Deleted!',
-          'User has been deleted.',
+          'Usuario Borrado !',
+          'Usuario ha borrado.',
           'success'
         ).then(()=>{
           //Refreshes page to simulate deletion.
@@ -34,8 +34,8 @@ export class UserCardComponent {
         })
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
-          'Cancelled',
-          'User not deleted :)',
+          'Cancelar',
+          'Usuario no borrado :)',
           'warning'
         )
       }
