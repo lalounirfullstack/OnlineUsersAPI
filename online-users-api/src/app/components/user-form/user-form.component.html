@@ -6,25 +6,26 @@
 
     <label for="last_name">Last Name</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Enter Your Last Name" formControlName="last_name" id="last_name">
-    <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
+    <p class="error" *ngIf="formValidator('last_name','required')">Required Field</p>
 
     <label for="username">User Name</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Enter Your User Name" formControlName="username" id="username">
-    <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
+    <p class="error" *ngIf="formValidator('username','required')">Required Field</p>
 
     <label for="password">Password</label>
     <input type="password" class="form-control input is-rounded is-info" placeholder="Enter Your Password" formControlName="password" id="password">
-    <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
+    <p class="error" *ngIf="formValidator('password','required')">Required Field</p>
     <p class="error" *ngIf="formValidator('password','pattern')">At least: 1-Upper Case, 1-Lower Case, 1-Digit, 1-Special Character & a minimum 8 Character Length</p>
 
     <label for="email">Email</label>
     <input type="email" class="form-control input is-rounded is-info" placeholder="Enter Your Email" formControlName="email" id="email">
-    <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
+    <p class="error" *ngIf="formValidator('email','required')">Required Field</p>
     <p class="error" *ngIf="formValidator('email','pattern')">Invalid Email Format</p>
 
     <label for="image">Photo Image URL</label>
     <input type="text" class="form-control input is-rounded is-info" placeholder="Enter Your Photo URL" formControlName="image" id="image">
-    <p class="error" *ngIf="formValidator('first_name','required')">Required Field</p>
+    <p class="error" *ngIf="formValidator('image','required')">Required Field</p>
+    <p class="error" *ngIf="formValidator('image','pattern')">Valid URL for Image required</p>
 
     <!--Send Form-->
     <input type="submit" value="Enviar" class="btn btn-primary m-3" [disabled]="!userForm.valid">

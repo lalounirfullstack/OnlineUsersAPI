@@ -40,7 +40,7 @@ export class UserFormComponent {
       ]),
       image: new FormControl('', [
         Validators.required,
-        //Validators.pattern(/^(https?|ftp)://([^\s/$.?#].[^\s]*)$/)
+        Validators.pattern(/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/)
       ])
     }, []);
   }
@@ -88,7 +88,8 @@ export class UserFormComponent {
             Validators.pattern(/^[\w-.]+@([\w-]+\.)+[\w-]{2,6}$/)
           ]),
           image: new FormControl(response.image, [
-            Validators.required
+            Validators.required,
+            Validators.pattern(/(http|ftp|https):\/\/[\w\-_]+(\.[\w\-_]+)+([\w\-\.,@?^=%&amp;:/~\+#]*[\w\-\@?^=%&amp;/~\+#])?/)
           ]),
       },[]);
 
