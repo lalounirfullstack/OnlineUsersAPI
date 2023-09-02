@@ -33,8 +33,8 @@
     <p class="error" *ngIf="formValidator('image','pattern')">Formato de URL requerido para la Imagen</p>
 
     <!--Send Form-->
-    <input type="submit" value="Guardar" class="btn btn-primary m-3" [disabled]="!userForm.valid">
-    <button class="btn btn-danger" [routerLink]="['/home']">Cancelar</button>
+    <button type="submit" class="btn btn-primary m-3" [disabled]="!userForm.valid">{{ userForm.value.id ? 'Actualizar' : 'Guardar' }}</button>
+<button class="btn btn-danger" [routerLink]="['/home']">Cancelar</button>
   </form>
 </section>
 
