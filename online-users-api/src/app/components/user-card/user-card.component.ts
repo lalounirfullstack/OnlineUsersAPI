@@ -11,11 +11,10 @@ import Swal from "sweetalert2";
 export class UserCardComponent {
   @Input() userCard : User | any;
 
-  oneUser !: User | any;
   usersServices: UsersService = inject(UsersService)
 
-    //Delete User using SweetAlert2
-    deleteUser(userId:string){
+  // Delete User Method  using SweetAlert2
+  deleteUser(userId: string) {
     Swal.fire({
       title: 'Deseas Borrar al Usuario?',
       icon: 'question',
@@ -24,23 +23,25 @@ export class UserCardComponent {
       confirmButtonText: 'Aceptar'
     }).then((result) => {
       if (result.value) {
-        Swal.fire(
-          'Usuario Borrado !',
-          'Usuario ha borrado.',
-          'success'
-        ).then(()=>{
-          //Refreshes page to simulate deletion.
-          window.location.reload();
-        })
+        this.usersServices.delete(userId).then(() => {
+          Swal.fire(
+            'Usuario Borrado !',
+            'Usuario ha sido borrado.',
+            'success'
+          ).then(() => {
+            // Refreshes page to simulate deletion.
+            window.location.reload();
+          });
+        }).catch((error) => {
+          console.error("Error deleting user:", error);
+        });
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelar',
           'Usuario no borrado :)',
           'warning'
-        )
+        );
       }
-    })
+    });
   }
-
-
 }

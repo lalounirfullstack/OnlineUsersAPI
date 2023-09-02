@@ -26,7 +26,7 @@ export class UserViewComponent {
       //Stores clicked User
       let id : string = (params.iduser);
       // Fill in the User Data calling the Service
-      // Inject User Service above
+      // Inject User Service aboveq
       this.oneUser = this.usersServices.getByUserId(id).subscribe((response)=>{
         //Response stored into one User
         this.oneUser = response;
@@ -34,30 +34,42 @@ export class UserViewComponent {
     });
   }
 
-  deleteUser(userId:string){
-    Swal.fire({
-      title: 'Desear borrar el usuario?',
-      /*text: 'You will not be able to recover this file!',*/
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Aceptar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.value) {
-        Swal.fire(
-          'Usuario borrado',
-          'Usuario ha sido borrado ! :)',
-          'success'
-        ).then(()=>{
-          this.router.navigate(['/home'])
+  // Delete methos using Sweet2
+  deleteUser(userId: string) {
+  Swal.fire({
+    title: '¿Deseas borrar el usuario?',
+    icon: 'question',
+    showCancelButton: true,
+    cancelButtonText: 'Cancelar',
+    confirmButtonText: 'Aceptar'
+  }).then((result) => {
+    if (result.value) {
+      this.usersServices.delete(userId)
+        .then(() => {
+          Swal.fire(
+            'Usuario borrado',
+            'Usuario ha sido borrado!',
+            'success'
+          ).then(() => {
+            this.router.navigate(['/home']);
+          });
         })
-      } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Cancelado',
-          'User no borrado :(',
-          'error'
-        )
-      }
-    })
-  }
+        .catch(error => {
+          console.error('Error deleting user:', error);
+          Swal.fire(
+            'Error',
+            'Ocurrió un error al borrar el usuario',
+            'error'
+          );
+        });
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire(
+        'Cancelado',
+        'Usuario no borrado :(',
+        'error'
+      );
+    }
+  });
+}
+
 }
