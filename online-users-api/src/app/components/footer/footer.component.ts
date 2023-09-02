@@ -21,6 +21,5 @@ export class FooterComponent {
     setTimeout(() => {
       this.displayMessage = false;
     }, 3000);
-
   }
 }

@@ -135,7 +135,5 @@ export class UserFormComponent {
   formValidator(formControlName:string, validator:string): boolean | undefined{
     return this.userForm.get(formControlName)?.hasError(validator) && this.userForm.get(formControlName)?.touched
   }
-
-
 }
 
